@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using AdminSection.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace AdminSection
 {
@@ -33,7 +34,11 @@ namespace AdminSection
             services.AddDbContext<ApplicationContext>(options =>
               options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<User, IdentityRole>()
+            services.AddIdentity<User, IdentityRole>(
+                options =>
+                {
+                    options.Cookies.ApplicationCookie.LoginPath = new PathString("/Home/Index");
+                })
                 .AddEntityFrameworkStores<ApplicationContext>();
 
             // Add framework services.

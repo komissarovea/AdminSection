@@ -4,12 +4,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using AdminSection.Models;
 using AdminSection.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AdminSection.Controllers
 {
+    [Authorize]
     public class UsersController : Controller
     {
-        UserManager<User> _userManager;
+        private readonly UserManager<User> _userManager;
 
         public UsersController(UserManager<User> userManager)
         {

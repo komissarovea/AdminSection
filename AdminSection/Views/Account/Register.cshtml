@@ -7,33 +7,43 @@
         <input asp-for="UserName" />
         <span asp-validation-for="UserName"></span>
     </div>
+    <p />
     <div>
         <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
+        <input id="myPassword" asp-for="Password" />
         <span asp-validation-for="Password"></span>
     </div>
+    <p />
     <div>
         <label asp-for="PasswordConfirm"></label><br />
         <input asp-for="PasswordConfirm" />
         <span asp-validation-for="PasswordConfirm"></span>
     </div>
+    <p />
     <div>
         <label asp-for="Email"></label><br />
         <input asp-for="Email" />
         <span asp-validation-for="Email"></span>
     </div>
+    <p />
     <div>
         <label asp-for="FirstName"></label><br />
         <input asp-for="FirstName" />
         <span asp-validation-for="FirstName"></span>
     </div>
+    <p />
     <div>
         <label asp-for="LastName"></label><br />
         <input asp-for="LastName" />
         <span asp-validation-for="LastName"></span>
     </div>
-    <p/>
+    <p />
     <div>
         <input type="submit" value="Register" />
     </div>
 </form>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/strength.js"></script>
+<script src="~/js/strengthInit.js"></script>
+
