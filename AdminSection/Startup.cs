@@ -37,9 +37,8 @@ namespace AdminSection
             services.AddIdentity<User, IdentityRole>(
                 options =>
                 {
-                    options.Cookies.ApplicationCookie.LoginPath = new PathString("/Home/Index");
-                })
-                .AddEntityFrameworkStores<ApplicationContext>();
+                    //options.Cookies.ApplicationCookie.LoginPath = new PathString("/Home/Index");
+                }).AddEntityFrameworkStores<ApplicationContext>();
 
             // Add framework services.
             services.AddMvc();

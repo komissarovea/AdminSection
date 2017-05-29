@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using AdminSection.ViewModels;
 using AdminSection.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AdminSection.Controllers
 {
@@ -92,6 +93,36 @@ namespace AdminSection.Controllers
             // удаляем аутентификационные куки
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                //var user = await _userManager.FindByNameAsync(model.Email);
+                //if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
+                //{
+                //    return View("ForgotPasswordConfirmation");
+                //}
+
+                //var code = await _userManager.GeneratePasswordResetTokenAsync(user);
+                //var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
+                //EmailService emailService = new EmailService();
+                //await emailService.SendEmailAsync(model.Email, "Reset Password",
+                //$"Для сброса пароля пройдите по ссылке: <a href='{callbackUrl}'>link</a>");
+                //return View("ForgotPasswordConfirmation");
+            }
+            return View(model);
         }
     }
 }

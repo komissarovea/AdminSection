@@ -16,12 +16,27 @@
         <span asp-validation-for="Password"></span>
     </div>
     <p />
-    <div>
+    <div class="form-group">
+            <div class="checkbox">
+                <label asp-for="RememberMe">
+                    <input asp-for="RememberMe" />
+                    @Html.DisplayNameFor(m => m.RememberMe)
+                </label>
+            </div>
+    </div>
+    @*<div>
         <label asp-for="RememberMe"></label><br />
         <input asp-for="RememberMe" />
-    </div>
+    </div>*@
     <p/>
     <div>
         <input type="submit" value="Enter" />
     </div>
+    <p />
+    <p>
+        <a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">Register as a new user?</a>
+    </p>
+    <p>
+        <a asp-action="ForgotPassword">Forgot your password?</a>
+    </p>
 </form>
