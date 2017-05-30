@@ -1,9 +1,10 @@
 ﻿
 @model IEnumerable<AdminSection.Models.User>
 @{
-    ViewBag.Title = "User's list";
+    ViewData["Title"] = ViewBag.Title = "Users";
 }
 
+<h2>@ViewData["Title"]</h2>
 @*<a asp-action="Create">Create new user</a>*@
 
 <table class="table">

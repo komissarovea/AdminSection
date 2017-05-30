@@ -38,7 +38,8 @@ namespace AdminSection
                 options =>
                 {
                     //options.Cookies.ApplicationCookie.LoginPath = new PathString("/Home/Index");
-                }).AddEntityFrameworkStores<ApplicationContext>();
+                }).AddEntityFrameworkStores<ApplicationContext>()
+                .AddDefaultTokenProviders(); ;
 
             // Add framework services.
             services.AddMvc();
@@ -53,6 +54,7 @@ namespace AdminSection
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                //app.UseDatabaseErrorPage();
                 app.UseBrowserLink();
             }
             else

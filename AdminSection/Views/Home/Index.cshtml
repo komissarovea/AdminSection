@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h2>Home Page</h2>
+<h2>@ViewData["Title"]</h2>
 
 @if (User.Identity.IsAuthenticated)
 {
@@ -16,9 +16,13 @@ else
 {
    
     <p>You need register or sign in</p>
-    <a asp-controller="Account" asp-action="Register">Register</a>
-    <p/>
-    <p />
-    <a asp-controller="Account" asp-action="Login">Sign in</a>
-    <p />
+    <p>
+        <a asp-controller="Account" asp-action="Register">Register</a>
+    </p>
+    <p>
+        <a asp-controller="Account" asp-action="Login">Sign in</a>
+    </p>
+    <p>
+        <a asp-controller="Account" asp-action="ForgotPassword">Forgot your password?</a>
+    </p>
 }
