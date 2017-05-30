@@ -1,6 +1,8 @@
 @model AdminSection.ViewModels.LoginViewModel
-
-<h2>Sign in</h2>
+@{
+    ViewData["Title"] = "Sign in";
+}
+<h2>@ViewData["Title"] </h2>
 <form method="post" asp-controller="Account" asp-action="Login"
       asp-route-returnUrl="@Model.ReturnUrl">
     <div asp-validation-summary="ModelOnly"></div>

@@ -1,5 +1,10 @@
 ﻿@model AdminSection.ViewModels.RegisterViewModel
-<h2>New user registration</h2>
+
+@{
+    ViewData["Title"] = "New user registration";
+}
+<h2>@ViewData["Title"] </h2>
+
 <form method="post" asp-controller="Account" asp-action="Register">
     <div asp-validation-summary="ModelOnly"></div>
     <div>

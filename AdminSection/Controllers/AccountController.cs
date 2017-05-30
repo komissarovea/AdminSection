@@ -69,7 +69,7 @@ namespace AdminSection.Controllers
                     await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {
-                    RedirectToLocal(model.ReturnUrl);
+                    return RedirectToLocal(model.ReturnUrl);
                     //// проверяем, принадлежит ли URL приложению
                     //if (!String.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
                     //{
@@ -187,6 +187,7 @@ namespace AdminSection.Controllers
             }
             else
             {
+                //return RedirectToAction("Index", "Home");
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
         }
