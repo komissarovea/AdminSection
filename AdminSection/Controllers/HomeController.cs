@@ -12,7 +12,7 @@ namespace AdminSection.Controllers
         {
             ViewData["Message"] = "Hello page";
 
-            return View();
+            return View("Index");
         }
 
         public IActionResult About()
