@@ -2,6 +2,7 @@ using System;
 using Xunit;
 using AdminSection.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using Moq;
 
 namespace AdminSection.Tests
 {
@@ -41,5 +42,6 @@ namespace AdminSection.Tests
             // Assert
             Assert.Equal("Index", result?.ViewName);
         }
+        
     }
 }

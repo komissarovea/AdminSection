@@ -12,13 +12,15 @@ namespace AdminSection.Controllers
     public class UsersController : Controller
     {
         private readonly UserManager<User> _userManager;
+        private readonly ApplicationContext _context;
 
-        public UsersController(UserManager<User> userManager)
+        public UsersController(ApplicationContext context, UserManager<User> userManager)
         {
             _userManager = userManager;
+            _context = context;
         }
 
-        public IActionResult Index() => View(_userManager.Users.ToList());
+        public IActionResult Index() => View(_context.Users.ToList());
 
         public IActionResult Create() => View();
 
