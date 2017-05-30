@@ -10,6 +10,8 @@ namespace AdminSection.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["Message"] = "Hello page";
+
             return View();
         }
 
